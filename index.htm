@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test Website</title>
+<style>
+div {padding:100px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+
+button {border: 1px solid; padding:10px 30px 10px 30px}
+button:hover {background-color:white}
+</style>
+</head>
+<body style="background-color:skyblue">
+<div>
+<h1>This is my first webpage, i test this with javascript :))</h1>
+<h4>thiendev</h4>
+<p id="pp">0</p>
+<button onclick="decrease()">- 1</button>
+<button onclick="increase()">+ 1</button>
+<button onclick="warn()">Alert</button>
+</div>
+<script>
+let value = 0;
+function warn(){
+	window.alert("Warning, thiendev is here, run now!")
+}
+function increase(){
+	value += 1;
+    	document.getElementById("pp").innerHTML = value;
+    
+};
+function decrease(){
+	value -= 1;
+	document.getElementById("pp").innerHTML = value;
+};
+</script>
+</body>
+</html>
