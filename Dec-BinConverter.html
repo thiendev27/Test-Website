@@ -21,12 +21,23 @@ function dec2bin(kq){
 	};
 	return "";
 };
+function bin2dec(index){
+	if (index > 0) {
+		return (number[index] ** index + bin2dec(index -1))
+	}
+	return 0;
+}
 function reverse(s){
     return s.split("").reverse().join("");
 }
 function converter(){
 	number = input.value;
-	let result = reverse(dec2bin(number));
+	if (select.options[select.selectedIndex].value === "1"){
+		let result = reverse(dec2bin(number));
+	} else {
+		let result = bin2dec(number)
+	}
+	
 	output.innerHTML = "The result is: " + result;
 };
 </script>
