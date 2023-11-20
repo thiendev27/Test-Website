@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Convert decimal - binary (testing javascript)</h1>
+<input id="inp" placeholder="Enter the number to convert"><select id="sec">
+<option value="1">dec2bin</option>
+<option value="2">bin2dec</option>
+</select><br>
+<button onclick="converter()">Convert</button>
+<p id="out">The result is: </p>
+<script>
+let select = document.getElementById("sec");
+let input = document.getElementById("inp");
+let output = document.getElementById("out");
+let number;
+function dec2bin(kq){
+	let modulo = Math.floor(kq % 2)
+	if (kq !== 0) {
+		return (modulo.toString() + dec2bin((kq - modulo)/ 2))
+	};
+	return "";
+};
+function reverse(s){
+    return s.split("").reverse().join("");
+}
+function converter(){
+	number = input.value;
+	let result = reverse(dec2bin(number));
+	output.innerHTML = "The result is: " + result;
+};
+</script>
+
+</body>
+</html>
